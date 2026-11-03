@@ -1,0 +1,22 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "neo-dental-clinic",
+  "main": ".output/server/index.mjs",
+  "compatibility_date": "2026-11-03",
+  "compatibility_flags": ["nodejs_compat"],
+  "no_bundle": true,
+  "rules": [{ "type": "ESModule", "globs": ["**/*.mjs", "**/*.js"] }],
+  "assets": {
+    "binding": "ASSETS",
+    "directory": ".output/public"
+  },
+  "observability": { "enabled": true },
+
+  // Public values only (same as the publishable key in .env).
+  // SUPABASE_SERVICE_ROLE_KEY must NOT go here: set it with
+  //   npx wrangler secret put SUPABASE_SERVICE_ROLE_KEY
+  "vars": {
+    "SUPABASE_URL": "https://ythbygzthouqwgoyplkc.supabase.co",
+    "SUPABASE_PUBLISHABLE_KEY": "sb_publishable_mQBQadCaqqApA1PnWJDteA_HYKHQ9KN"
+  }
+}
